@@ -16,7 +16,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   const variants = {
     primary: `
       bg-[var(--accent-color)] 
-      text-white 
+      text-[var(--bg-color)] 
       border-none 
       rounded-[var(--radius-2xl)] 
       shadow-[0_2px_8px_color-mix(in_srgb,var(--shadow-color)_50%,transparent)]

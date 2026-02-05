@@ -1,7 +1,8 @@
 /* Glass Components */
 .glass-card {
-    background: var(--bg-color);
-    opacity: 1;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--glass-border);
@@ -17,6 +18,8 @@
 
 .glass-input {
     background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-2xl);
     color: var(--text-color);
@@ -31,7 +34,7 @@
 
 .glass-button {
     background: var(--accent-color);
-    color: white;
+    color: var(--bg-color);
     border: none;
     border-radius: var(--radius-2xl);
     padding: 0.75rem 1.25rem;
@@ -43,13 +46,12 @@
 
 .glass-button:hover {
     transform: translateY(-2px);
-    filter: brightness(1.1);
+    filter: invert(0.05);
     box-shadow: var(--shadow-md);
 }
 
 .glass-button:active {
     transform: translateY(0) scale(0.98);
-    filter: brightness(0.95);
 }
 
 .glass-badge {
@@ -61,5 +63,5 @@
     font-size: 0.8rem;
     font-weight: 600;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--bg-color);
 }

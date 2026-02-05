@@ -16,11 +16,11 @@ export function ThemeSwitcher() {
           transition-all duration-200
           cursor-pointer
           ${theme === 'light'
-            ? 'bg-[var(--accent-color)] text-white scale-105'
+            ? 'bg-[var(--accent-color)] text-[var(--bg-color)] scale-105'
             : 'text-[var(--text-color-secondary)] hover:bg-[color-mix(in_srgb,var(--text-color)_10%,transparent)]'
           }
         `}
-        aria-label="设为浅色主题"
+        aria-label="設為淺色主題"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
@@ -43,11 +43,11 @@ export function ThemeSwitcher() {
           transition-all duration-200
           cursor-pointer
           ${theme === 'dark'
-            ? 'bg-[var(--accent-color)] text-white scale-105'
+            ? 'bg-[var(--accent-color)] text-[var(--bg-color)] scale-105'
             : 'text-[var(--text-color-secondary)] hover:bg-[color-mix(in_srgb,var(--text-color)_10%,transparent)]'
           }
         `}
-        aria-label="设为深色主题"
+        aria-label="設為深色主題"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -62,11 +62,11 @@ export function ThemeSwitcher() {
           transition-all duration-200
           cursor-pointer
           ${theme === 'system'
-            ? 'bg-[var(--accent-color)] text-white scale-105'
+            ? 'bg-[var(--accent-color)] text-[var(--bg-color)] scale-105'
             : 'text-[var(--text-color-secondary)] hover:bg-[color-mix(in_srgb,var(--text-color)_10%,transparent)]'
           }
         `}
-        aria-label="设为系统主题"
+        aria-label="設為系統主題"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
