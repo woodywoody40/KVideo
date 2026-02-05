@@ -3,8 +3,10 @@
  * Handles movie display and loading states
  */
 
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { MovieCard } from './MovieCard';
 import { Icons } from '@/components/ui/Icon';
+import { useKeyboardNavigation } from '@/lib/hooks/useKeyboardNavigation';
 
 interface DoubanMovie {
   id: string;
@@ -31,16 +33,55 @@ export function MovieGrid({
   prefetchRef,
   loadMoreRef
 }: MovieGridProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  // Calculate columns for keyboard navigation logic
+  const [columns, setColumns] = useState(2);
+  useEffect(() => {
+    const updateColumns = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) setColumns(5);
+      else if (w >= 768) setColumns(4);
+      else if (w >= 640) setColumns(3);
+      else setColumns(2);
+    };
+    updateColumns();
+    window.addEventListener('resize', updateColumns);
+    return () => window.removeEventListener('resize', updateColumns);
+  }, []);
+
+  useKeyboardNavigation({
+    enabled: true,
+    containerRef,
+    itemCount: movies.length,
+    orientation: 'grid',
+    columns,
+    onNavigate: useCallback((index: number) => {
+      const el = cardRefs.current[index];
+      if (el) {
+        el.focus();
+        el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+      }
+    }, []),
+    onSelect: useCallback((index: number) => {
+      // Simulate click for validation (Link handles navigation)
+      const el = cardRefs.current[index];
+      el?.click();
+    }, [])
+  });
+
   if (movies.length === 0 && !loading) {
     return <MovieGridEmpty />;
   }
 
   return (
-    <>
+    <div ref={containerRef}>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-        {movies.map((movie) => (
+        {movies.map((movie, index) => (
           <MovieCard
             key={movie.id}
+            ref={(el) => { cardRefs.current[index] = el; }}
             movie={movie}
             onMovieClick={onMovieClick}
           />
@@ -58,7 +99,7 @@ export function MovieGrid({
 
       {/* No More Content */}
       {!hasMore && movies.length > 0 && <MovieGridNoMore />}
-    </>
+    </div>
   );
 }
 

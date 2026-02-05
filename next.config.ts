@@ -12,10 +12,6 @@ const nextConfig: NextConfig = {
 
   output: 'standalone',
   outputFileTracingRoot: __dirname,
-  turbopack: {
-    root: __dirname,
-  },
-
   images: {
     remotePatterns: [
       // Douban images

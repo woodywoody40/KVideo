@@ -1,9 +1,6 @@
-/**
- * MovieCard - Individual movie card component
- * Displays movie poster, title, and rating
- */
+'use client';
 
-import { memo, useState } from 'react';
+import { memo, useState, forwardRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
@@ -22,12 +19,13 @@ interface MovieCardProps {
   onMovieClick: (movie: DoubanMovie) => void;
 }
 
-export const MovieCard = memo(function MovieCard({ movie, onMovieClick }: MovieCardProps) {
+export const MovieCard = memo(forwardRef<HTMLAnchorElement, MovieCardProps>(function MovieCard({ movie, onMovieClick }, ref) {
   const [imageError, setImageError] = useState(false);
   const [fallbackError, setFallbackError] = useState(false);
 
   return (
     <Link
+      ref={ref}
       href={`/?q=${encodeURIComponent(movie.title)}`}
       onClick={(e) => {
         // Allow default behavior for modifier keys (new tab, etc.)
@@ -36,7 +34,7 @@ export const MovieCard = memo(function MovieCard({ movie, onMovieClick }: MovieC
         e.preventDefault();
         onMovieClick(movie);
       }}
-      className="group cursor-pointer hover:translate-y-[-2px] transition-transform duration-200 ease-out"
+      className="group cursor-pointer hover:translate-y-[-2px] transition-transform duration-200 ease-out outline-none focus:scale-105 focus:ring-4 focus:ring-[var(--accent-color)] focus:ring-offset-4 focus:ring-offset-[var(--bg-color)] focus:z-[100] rounded-[var(--radius-2xl)]"
       style={{
         position: 'relative',
         zIndex: 1,
@@ -44,6 +42,9 @@ export const MovieCard = memo(function MovieCard({ movie, onMovieClick }: MovieC
       }}
       onMouseEnter={(e) => (e.currentTarget.style.zIndex = '100')}
       onMouseLeave={(e) => (e.currentTarget.style.zIndex = '1')}
+      onFocus={(e) => (e.currentTarget.style.zIndex = '100')}
+      onBlur={(e) => (e.currentTarget.style.zIndex = '1')}
+      tabIndex={0}
     >
       <Card hover={false} className="p-0 h-full shadow-[0_2px_8px_var(--shadow-color)] hover:shadow-[0_8px_24px_var(--shadow-color)] transition-shadow duration-200 ease-out" blur={false}>
         <div className="relative aspect-[2/3] bg-[var(--glass-bg)] rounded-[var(--radius-2xl)]">
@@ -93,4 +94,6 @@ export const MovieCard = memo(function MovieCard({ movie, onMovieClick }: MovieC
       </Card>
     </Link>
   );
-});
+}));
+
+MovieCard.displayName = 'MovieCard';
