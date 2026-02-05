@@ -55,7 +55,7 @@ export function SortableTag({
                     className={`
             px-6 py-2.5 text-sm font-semibold transition-all whitespace-nowrap rounded-[var(--radius-full)] cursor-pointer select-none
             ${selectedTag === tag.id
-                            ? 'bg-[var(--accent-color)] text-white shadow-md scale-105'
+                            ? 'bg-[var(--accent-color)] text-[var(--bg-color)] shadow-md scale-105'
                             : 'bg-[var(--glass-bg)] backdrop-blur-xl text-[var(--text-color)] border border-[var(--glass-border)] hover:border-[var(--accent-color)] hover:scale-105'
                         }
           `}
