@@ -1,6 +1,6 @@
 {
-    "name": "KVideo - 影片聚合平台",
-    "short_name": "KVideo",
+    "name": "WoodyTV - 影片聚合平台",
+    "short_name": "WoodyTV",
     "description": "多源影片聚合搜尋和播放平台",
     "start_url": "/",
     "display": "standalone",
