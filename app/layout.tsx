@@ -67,6 +67,12 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/icon.png',
+    },
   },
 };
 
