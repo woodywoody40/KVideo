@@ -8,15 +8,15 @@ import { Icons } from '@/components/ui/Icon';
 export function HistoryEmptyState() {
   return (
     <div className="flex flex-col items-center justify-center h-full text-center py-12">
-      <Icons.Inbox 
-        size={64} 
-        className="text-[var(--text-color-secondary)] opacity-50 mb-4" 
+      <Icons.Inbox
+        size={64}
+        className="text-[var(--text-color-secondary)] opacity-50 mb-4"
       />
       <p className="text-[var(--text-color-secondary)] text-lg">
-        暂无观看历史
+        暫無觀看歷史
       </p>
       <p className="text-[var(--text-color-secondary)] text-sm mt-2 opacity-70">
-        您观看的视频会自动记录在这里
+        您觀看的影片會自動記錄在這裡
       </p>
     </div>
   );

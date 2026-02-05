@@ -26,7 +26,7 @@ export function DesktopVolumeControl({
             <button
                 onClick={onToggleMute}
                 className="btn-icon"
-                aria-label={isMuted ? 'Unmute' : 'Mute'}
+                aria-label={isMuted ? '取消靜音' : '靜音'}
             >
                 {isMuted || volume === 0 ? (
                     <Icons.VolumeX size={20} />

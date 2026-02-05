@@ -1,3 +1,4 @@
+import { s2t } from 'chinese-s2t';
 import type {
     VideoSource,
     VideoDetail,
@@ -64,16 +65,19 @@ export async function getVideoDetail(
 
         return {
             vod_id: videoData.vod_id,
-            vod_name: videoData.vod_name,
+            vod_name: s2t(videoData.vod_name || ''),
             vod_pic: videoData.vod_pic,
-            vod_remarks: videoData.vod_remarks,
+            vod_remarks: s2t(videoData.vod_remarks || ''),
             vod_year: videoData.vod_year,
-            vod_area: videoData.vod_area,
-            vod_actor: videoData.vod_actor,
-            vod_director: videoData.vod_director,
-            vod_content: videoData.vod_content,
-            type_name: videoData.type_name,
-            episodes,
+            vod_area: s2t(videoData.vod_area || ''),
+            vod_actor: s2t(videoData.vod_actor || ''),
+            vod_director: s2t(videoData.vod_director || ''),
+            vod_content: s2t(videoData.vod_content || ''),
+            type_name: s2t(videoData.type_name || ''),
+            episodes: episodes.map(ep => ({
+                ...ep,
+                name: s2t(ep.name || '')
+            })),
             source: source.id,
             source_code: playFrom[selectedIndex] || '',
         };

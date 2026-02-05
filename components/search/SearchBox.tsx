@@ -13,7 +13,7 @@ interface SearchBoxProps {
     placeholder?: string;
 }
 
-export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = '搜索电影、电视剧、综艺...' }: SearchBoxProps) {
+export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = '搜尋電影、電視劇、綜藝...' }: SearchBoxProps) {
     const [query, setQuery] = useState(initialQuery);
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -77,7 +77,7 @@ export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = 
                 onKeyDown={handleKeyDown}
                 placeholder={placeholder}
                 className="text-base sm:text-lg pr-28 sm:pr-36 md:pr-44 truncate"
-                aria-label="搜索视频内容"
+                aria-label="搜尋影片內容"
                 aria-expanded={isDropdownOpen}
                 aria-controls="search-history-dropdown"
                 aria-autocomplete="list"
@@ -89,7 +89,7 @@ export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = 
                         type="button"
                         onClick={handleClear}
                         className="p-2 text-[var(--text-color)] opacity-70 hover:opacity-100 transition-opacity touch-manipulation cursor-pointer"
-                        aria-label="清除搜索"
+                        aria-label="清除搜尋"
                     >
                         <Icons.X size={20} />
                     </button>
@@ -102,7 +102,7 @@ export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = 
                 >
                     <span className="flex items-center gap-2">
                         <Icons.Search size={20} />
-                        <span className="hidden sm:inline">搜索</span>
+                        <span className="hidden sm:inline">搜尋</span>
                     </span>
                 </Button>
             </div>

@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
+    <html lang="zh-TW" suppressHydrationWarning>
       <head>
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />

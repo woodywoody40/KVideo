@@ -1,3 +1,4 @@
+import { t2s, s2t } from 'chinese-s2t';
 import type {
     VideoSource,
     VideoItem,
@@ -14,9 +15,12 @@ async function searchVideosBySource(
 ): Promise<{ results: VideoItem[]; source: string; responseTime: number }> {
     const startTime = Date.now();
 
+    // 將查詢轉換為簡體，以獲得更好的相容性
+    const simplifiedQuery = t2s(query);
+
     const url = new URL(`${source.baseUrl}${source.searchPath}`);
     url.searchParams.set('ac', 'detail');
-    url.searchParams.set('wd', query);
+    url.searchParams.set('wd', simplifiedQuery);
     url.searchParams.set('pg', page.toString());
 
     try {
@@ -44,6 +48,7 @@ async function searchVideosBySource(
 
         const results: VideoItem[] = (data.list || []).map(item => ({
             ...item,
+            vod_name: s2t(item.vod_name),
             source: source.id,
         }));
 

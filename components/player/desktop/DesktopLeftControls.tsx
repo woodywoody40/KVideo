@@ -37,7 +37,7 @@ export function DesktopLeftControls({
             <button
                 onClick={onTogglePlay}
                 className="btn-icon"
-                aria-label={isPlaying ? 'Pause' : 'Play'}
+                aria-label={isPlaying ? '暫停' : '播放'}
             >
                 {isPlaying ? <Icons.Pause size={20} /> : <Icons.Play size={20} />}
             </button>
