@@ -111,24 +111,29 @@ KVideo 支援兩種密碼保護方式：
 
 ### 方式二：環境變數密碼（推薦用於部署）
 
-透過 `ACCESS_PASSWORD` 環境變數設定全域密碼：
+透過 `ACCESS_PASSWORD` 或 `ACCESS_PASSWORD_2` 環境變數設定全域密碼：
 
 **Docker 部署：**
 
 ```bash
-docker run -d -p 3000:3000 -e ACCESS_PASSWORD=your_premium_password --name kvideo kuekhaoyang/kvideo:latest
+docker run -d -p 3000:3000 \
+  -e ACCESS_PASSWORD=your_password_1 \
+  -e ACCESS_PASSWORD_2=your_password_2 \
+  --name kvideo kuekhaoyang/kvideo:latest
 ```
 
 **Vercel 部署：**
 
 在 Vercel 專案設定中新增環境變數：
 - 變數名：`ACCESS_PASSWORD`
-- 變數值：你的密碼
+- 變數值：你的第一個密碼
+- 變數名：`ACCESS_PASSWORD_2`
+- 變數值：你的第二個密碼
 
 **特點：**
-- **全域生效**：所有用戶都需要此密碼才能存取
+- **全域生效**：所有用戶都需要此密碼之一才能存取
 - **無法在介面刪除**：只能透過修改環境變數變更
-- **與本地密碼相容**：兩種密碼都可以解鎖應用
+- **與本地密碼相容**：三種密碼都可以解鎖應用
 - **密碼持久化**：支援透過 `PERSIST_PASSWORD` 環境變數控制是否在目前裝置上記住密碼。
 
 ### 方式三：密碼持久化設定（ENV）

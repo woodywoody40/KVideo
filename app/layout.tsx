@@ -95,7 +95,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <PasswordGate hasEnvPassword={!!process.env.ACCESS_PASSWORD}>
+          <PasswordGate hasEnvPassword={!!(process.env.ACCESS_PASSWORD || process.env.ACCESS_PASSWORD_2)}>
             <AdKeywordsWrapper />
             {children}
             <BackToTop />
