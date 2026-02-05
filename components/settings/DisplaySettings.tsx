@@ -73,7 +73,7 @@ export function DisplaySettings({
                     <button
                         onClick={() => onSearchDisplayModeChange('normal')}
                         className={`px-4 py-3 rounded-[var(--radius-2xl)] border text-left font-medium transition-all duration-200 cursor-pointer ${searchDisplayMode === 'normal'
-                            ? 'bg-[var(--accent-color)] border-[var(--accent-color)] text-white shadow-[0_4px_12px_rgba(var(--accent-color-rgb),0.3)]'
+                            ? 'bg-[var(--accent-color)] border-[var(--accent-color)] text-[var(--bg-color)] shadow-[0_4px_12px_rgba(var(--accent-color-rgb),0.3)]'
                             : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                             }`}
                     >
@@ -83,7 +83,7 @@ export function DisplaySettings({
                     <button
                         onClick={() => onSearchDisplayModeChange('grouped')}
                         className={`px-4 py-3 rounded-[var(--radius-2xl)] border text-left font-medium transition-all duration-200 cursor-pointer ${searchDisplayMode === 'grouped'
-                            ? 'bg-[var(--accent-color)] border-[var(--accent-color)] text-white shadow-[0_4px_12px_rgba(var(--accent-color-rgb),0.3)]'
+                            ? 'bg-[var(--accent-color)] border-[var(--accent-color)] text-[var(--bg-color)] shadow-[0_4px_12px_rgba(var(--accent-color-rgb),0.3)]'
                             : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                             }`}
                     >

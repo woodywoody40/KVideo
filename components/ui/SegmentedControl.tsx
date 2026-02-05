@@ -69,7 +69,7 @@ export function SegmentedControl<T extends string>({
                     onClick={() => onChange(option.value)}
                     className={`
                         relative z-10 flex-1 py-2 px-4 text-sm font-semibold transition-colors duration-200
-                        ${value === option.value ? 'text-white' : 'text-[var(--text-color-secondary)] hover:text-[var(--text-color)]'}
+                        ${value === option.value ? 'text-[var(--bg-color)]' : 'text-[var(--text-color-secondary)] hover:text-[var(--text-color)]'}
                     `}
                 >
                     {option.label}

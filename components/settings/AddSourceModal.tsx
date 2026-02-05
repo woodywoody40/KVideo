@@ -36,26 +36,26 @@ export function AddSourceModal({ isOpen, onClose, onAdd, existingIds, initialVal
           }`}
       >
         <div className="bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] rounded-[var(--radius-2xl)] shadow-[var(--shadow-md)] p-6">
-          <ModalHeader title={initialValues ? "编辑视频源" : "添加自定义源"} onClose={onClose} />
+          <ModalHeader title={initialValues ? "編輯影片源" : "新增自訂源"} onClose={onClose} />
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="source-name" className="block mb-2 font-medium text-[var(--text-color)]">
-                源名称
+                源名稱
               </label>
               <input
                 id="source-name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="例如：新视频源"
+                placeholder="例如：新影片源"
                 className="w-full bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] rounded-[var(--radius-2xl)] px-4 py-3 text-[var(--text-color)] placeholder:text-[var(--text-color-secondary)] focus:outline-none focus:border-[var(--accent-color)] focus:ring-4 focus:ring-[color-mix(in_srgb,var(--accent-color)_30%,transparent)] transition-all duration-[0.4s]"
               />
             </div>
 
             <div>
               <label htmlFor="source-url" className="block mb-2 font-medium text-[var(--text-color)]">
-                接口地址
+                介面地址
               </label>
               <input
                 id="source-url"
@@ -83,9 +83,9 @@ export function AddSourceModal({ isOpen, onClose, onAdd, existingIds, initialVal
               </button>
               <button
                 type="submit"
-                className="flex-1 px-6 py-3 rounded-[var(--radius-2xl)] bg-[var(--accent-color)] text-white font-semibold hover:brightness-110 hover:-translate-y-0.5 shadow-[var(--shadow-sm)] transition-all duration-200"
+                className="flex-1 px-6 py-3 rounded-[var(--radius-2xl)] bg-[var(--accent-color)] text-[var(--bg-color)] font-semibold hover:brightness-110 hover:-translate-y-0.5 shadow-[var(--shadow-sm)] transition-all duration-200"
               >
-                {initialValues ? "保存" : "添加"}
+                {initialValues ? "儲存" : "新增"}
               </button>
             </div>
           </form>

@@ -70,7 +70,7 @@ export function SourceSettings({
                     </button>
                     <button
                         onClick={onAddSource}
-                        className="px-4 py-2 rounded-[var(--radius-2xl)] bg-[var(--accent-color)] text-white text-sm font-semibold hover:brightness-110 hover:-translate-y-0.5 shadow-[var(--shadow-sm)] transition-all duration-200 cursor-pointer"
+                        className="px-4 py-2 rounded-[var(--radius-2xl)] bg-[var(--accent-color)] text-[var(--bg-color)] text-sm font-semibold hover:brightness-110 hover:-translate-y-0.5 shadow-[var(--shadow-sm)] transition-all duration-200 cursor-pointer"
                     >
                         + 新增來源
                     </button>

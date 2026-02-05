@@ -89,7 +89,7 @@ export function EpisodeList({
             className={`
               ml-auto p-1.5 rounded-[var(--radius-2xl)] transition-all duration-200
               ${isReversed
-                ? 'bg-[var(--accent-color)] text-white'
+                ? 'bg-[var(--accent-color)] text-[var(--bg-color)]'
                 : 'bg-[var(--glass-bg)] text-[var(--text-color-secondary)] hover:bg-[var(--glass-hover)] border border-[var(--glass-border)]'
               }
             `}
@@ -131,7 +131,7 @@ export function EpisodeList({
                 className={`
                   w-full px-3 py-2 sm:px-4 sm:py-3 rounded-[var(--radius-2xl)] text-left transition-[var(--transition-fluid)] cursor-pointer
                   ${isCurrentEpisode
-                    ? 'bg-[var(--accent-color)] text-white shadow-[0_4px_12px_color-mix(in_srgb,var(--accent-color)_50%,transparent)] brightness-110'
+                    ? 'bg-[var(--accent-color)] text-[var(--bg-color)] shadow-[0_4px_12px_color-mix(in_srgb,var(--accent-color)_50%,transparent)] brightness-110'
                     : 'bg-[var(--glass-bg)] hover:bg-[var(--glass-hover)] text-[var(--text-color)] border border-[var(--glass-border)]'
                   }
                   focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] focus-visible:ring-offset-2

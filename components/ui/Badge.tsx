@@ -16,7 +16,7 @@ const BadgeComponent = memo(function Badge({
   iconPosition = 'left'
 }: BadgeProps) {
   const variants = {
-    primary: "bg-[var(--accent-color)] text-white shadow-[var(--shadow-sm)]",
+    primary: "bg-[var(--accent-color)] text-[var(--bg-color)] shadow-[var(--shadow-sm)]",
     secondary: "bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-color)]",
   };
 
