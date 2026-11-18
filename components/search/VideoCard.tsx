@@ -1,5 +1,6 @@
 'use client';
 
+import { htmlToText } from '@/lib/utils/html';
 import { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -149,23 +150,21 @@ export const VideoCard = memo<VideoCardProps>(({
                     <div className="p-3 flex-1 flex flex-col">
                         {(() => {
                             const { cleanTitle, quality } = parseVideoTitle(video.vod_name);
-                            // Visual priority: Quality from title tag, then vod_remarks
-                            const displayQuality = quality || video.vod_remarks;
+                            const remarks = htmlToText(video.vod_remarks);
 
                             return (
                                 <>
                                     <h4 className="font-semibold text-sm text-[var(--text-color)] line-clamp-2 min-h-[2.5rem] mb-1">
                                         {cleanTitle}
                                     </h4>
-                                    {displayQuality && (
+                                    {quality && (
                                         <p className="text-xs text-[var(--text-color-secondary)] font-medium">
-                                            {displayQuality}
+                                            {quality}
                                         </p>
                                     )}
-                                    {/* Hide remarks if it was used as quality to avoid duplication */}
-                                    {video.vod_remarks && video.vod_remarks !== displayQuality && (
-                                        <p className="text-xs text-[var(--text-color-secondary)] mt-1 line-clamp-1">
-                                            {video.vod_remarks}
+                                    {remarks && remarks !== quality && (
+                                        <p className="text-xs text-[var(--text-color-secondary)] mt-1 line-clamp-1" title={remarks}>
+                                            {remarks}
                                         </p>
                                     )}
                                 </>

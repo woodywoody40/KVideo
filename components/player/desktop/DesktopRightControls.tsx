@@ -27,13 +27,13 @@ export function DesktopRightControls({
     onShowCastMenu
 }: DesktopRightControlsProps) {
     return (
-        <div className="relative z-50 flex items-center gap-3">
+        <div className="player-controls-right relative z-50 flex shrink-0 items-center gap-3">
             {/* Picture-in-Picture */}
             {
                 isPiPSupported && (
                     <button
                         onClick={onTogglePictureInPicture}
-                        className="btn-icon"
+                        className="btn-icon shrink-0"
                         aria-label="子母畫面"
                         title="子母畫面"
                     >
@@ -47,7 +47,7 @@ export function DesktopRightControls({
                 isAirPlaySupported && (
                     <button
                         onClick={onShowAirPlayMenu}
-                        className="btn-icon"
+                        className="btn-icon shrink-0"
                         aria-label="隔空播放"
                         title="隔空播放"
                     >
@@ -61,7 +61,7 @@ export function DesktopRightControls({
                 isCastAvailable && (
                     <button
                         onClick={onShowCastMenu}
-                        className="btn-icon"
+                        className="btn-icon shrink-0"
                         aria-label="投放"
                         title="投放"
                     >
@@ -73,7 +73,7 @@ export function DesktopRightControls({
             {/* Fullscreen */}
             <button
                 onClick={onToggleFullscreen}
-                className="btn-icon"
+                className="btn-icon shrink-0"
                 aria-label={isFullscreen ? '退出全螢幕' : '全螢幕'}
             >
                 {isFullscreen ? <Icons.Minimize size={20} /> : <Icons.Maximize size={20} />}

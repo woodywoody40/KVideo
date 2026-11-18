@@ -5,6 +5,7 @@
  * Following Liquid Glass design system
  */
 
+import { htmlToText } from '@/lib/utils/html';
 import { memo, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -190,16 +191,21 @@ export const VideoGroupCard = memo<VideoGroupCardProps>(({
                     <div className="p-3 flex-1 flex flex-col">
                         {(() => {
                             const { cleanTitle, quality } = parseVideoTitle(name);
-                            const displayQuality = quality || representative.vod_remarks;
+                            const remarks = htmlToText(representative.vod_remarks) || videos.map(video => htmlToText(video.vod_remarks)).find(Boolean);
 
                             return (
                                 <>
                                     <h4 className="font-semibold text-sm text-[var(--text-color)] line-clamp-2 min-h-[2.5rem] mb-1">
                                         {cleanTitle}
                                     </h4>
-                                    {displayQuality && (
+                                    {quality && (
                                         <p className="text-xs text-[var(--text-color-secondary)] font-medium">
-                                            {displayQuality}
+                                            {quality}
+                                        </p>
+                                    )}
+                                    {remarks && remarks !== quality && (
+                                        <p className="text-xs text-[var(--text-color-secondary)] mt-1 line-clamp-1" title={remarks}>
+                                            {remarks}
                                         </p>
                                     )}
                                 </>

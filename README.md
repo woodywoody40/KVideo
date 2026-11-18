@@ -6,7 +6,7 @@
 
 **🌐 線上體驗：[https://kvideo.pages.dev/](https://kvideo.pages.dev/)**
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -285,7 +285,7 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 
 | 技術 | 版本 | 用途 |
 |------|------|------|
-| **[Next.js](https://nextjs.org/)** | 16.0.3 | React 框架，使用 App Router |
+| **[Next.js](https://nextjs.org/)** | 16.4.6 | React 框架，使用 App Router |
 | **[React](https://react.dev/)** | 19.2.0 | UI 元件庫 |
 | **[TypeScript](https://www.typescriptlang.org/)** | 5.x | 型別安全的 JavaScript |
 | **[Tailwind CSS](https://tailwindcss.com/)** | 4.x | 實用優先的 CSS 框架 |
@@ -315,7 +315,7 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 
 #### 選項 1：Vercel 一鍵部署（推薦）
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/KuekHaoYang/KVideo)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/woodywoody40/KVideo)
 
 1. 點擊上方按鈕
 2. 連接你的 GitHub 帳號
@@ -371,7 +371,7 @@ docker run -d -p 3000:3000 --name kvideo kuekhaoyang/kvideo:latest
 **自己建構映像檔：**
 
 ```bash
-git clone https://github.com/KuekHaoYang/KVideo.git
+git clone https://github.com/woodywoody40/KVideo.git
 cd KVideo
 docker build -t kvideo .
 docker run -d -p 3000:3000 --name kvideo kvideo
@@ -387,7 +387,7 @@ docker-compose up -d
 
 ```bash
 # 1. 克隆倉庫
-git clone https://github.com/KuekHaoYang/KVideo.git
+git clone https://github.com/woodywoody40/KVideo.git
 cd KVideo
 
 # 2. 安裝依賴

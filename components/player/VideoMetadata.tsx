@@ -1,5 +1,6 @@
 'use client';
 
+import { htmlToText } from '@/lib/utils/html';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Icons } from '@/components/ui/Icon';
@@ -12,6 +13,7 @@ interface VideoMetadataProps {
 }
 
 export function VideoMetadata({ videoData, source, title }: VideoMetadataProps) {
+  const description = htmlToText(videoData?.vod_content);
   return (
     <Card hover={false}>
       <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -49,9 +51,9 @@ export function VideoMetadata({ videoData, source, title }: VideoMetadataProps) 
               </Badge>
             )}
           </div>
-          {videoData?.vod_content && (
+          {description && (
             <p className="text-sm sm:text-base text-[var(--text-secondary)]">
-              {videoData.vod_content.replace(/<[^>]*>/g, '')}
+              {description}
             </p>
           )}
           {videoData?.vod_actor && (
