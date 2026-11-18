@@ -1,10 +1,10 @@
-# 影片整合平台 (KVideo)
+# 影片整合平台 (Woody TV)
 
-![KVideo Banner](public/icon.png)
+![Woody TV Banner](public/icon.png)
 
 > 一個基於 Next.js 16 建構的現代化影片整合播放平台。採用獨特的 "Liquid Glass" 設計語言，提供流暢的視覺體驗和強大的影片搜尋功能。
 
-**🌐 線上體驗：[https://kvideo.pages.dev/](https://kvideo.pages.dev/)**
+**🌐 線上體驗：[https://woodytv.vercel.app/](https://woodytv.vercel.app/)**
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-blue?style=for-the-badge&logo=react)](https://react.dev/)
@@ -14,7 +14,7 @@
 
 ## 📖 專案簡介
 
-**KVideo** 是一個高效能、現代化的影片整合與播放應用，專注於提供極致的用戶體驗和視覺設計。本專案利用 Next.js 16 的最新特性，結合 React 19 和 Tailwind CSS v4，打造了一個既美觀又強大的影片瀏覽平台。
+**Woody TV** 是一個高效能、現代化的影片整合與播放應用，專注於提供極致的用戶體驗和視覺設計。本專案利用 Next.js 16 的最新特性，結合 React 19 和 Tailwind CSS v4，打造了一個既美觀又強大的影片瀏覽平台。
 
 ### 核心設計理念：Liquid Glass（液態玻璃）
 
@@ -99,7 +99,7 @@
 
 ## 🔒 密碼存取控制
 
-KVideo 支援兩種密碼保護方式：
+Woody TV 支援兩種密碼保護方式：
 
 ### 方式一：本地儲存密碼
 
@@ -119,7 +119,7 @@ KVideo 支援兩種密碼保護方式：
 docker run -d -p 3000:3000 \
   -e ACCESS_PASSWORD=your_password_1 \
   -e ACCESS_PASSWORD_2=your_password_2 \
-  --name kvideo kuekhaoyang/kvideo:latest
+  --name woody-tv woody-tv:latest
 ```
 
 **Vercel 部署：**
@@ -155,7 +155,7 @@ docker run -d -p 3000:3000 \
 
 | 變數名 | 說明 | 預設值 |
 |--------|------|--------|
-| `NEXT_PUBLIC_SITE_TITLE` | 瀏覽器標籤頁標題 | `影片整合平台 - KVideo` |
+| `NEXT_PUBLIC_SITE_TITLE` | 瀏覽器標籤頁標題 | `影片整合平台 - Woody TV` |
 | `NEXT_PUBLIC_SITE_DESCRIPTION` | 站台描述 | `專屬影片整合播放平台，具備美觀的 Liquid Glass UI` |
 | `NEXT_PUBLIC_SITE_NAME` | 站台頂部名稱 | `影片整合平台` |
 | `PERSIST_PASSWORD` | 密碼持久化 | `true` |
@@ -179,7 +179,7 @@ docker run -d -p 3000:3000 \
   -e NEXT_PUBLIC_SITE_NAME="我的影片平台" \
   -e NEXT_PUBLIC_SITE_TITLE="我的影片 - 整合播放平台" \
   -e NEXT_PUBLIC_SITE_DESCRIPTION="專屬影片整合播放平台" \
-  --name kvideo kuekhaoyang/kvideo:latest
+  --name woody-tv woody-tv:latest
 ```
 
 **本地開發：**
@@ -205,7 +205,7 @@ NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"每日更新源","url":"https://exam
 **Docker 部署：**
 
 ```bash
-docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySource","url":"..."}]' --name kvideo kuekhaoyang/kvideo:latest
+docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySource","url":"..."}]' --name woody-tv woody-tv:latest
 ```
 
 **Vercel 部署：**
@@ -273,7 +273,7 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 - **订阅源 (Subscription)**：
   - 指向一个 **JSON 文件**（如上面的示例）的 URL
   - 这个 JSON 文件里包含了一个或多个视频源的列表
-  - 例如：`https://mysite.com/kvideo-sources.json`
+  - 例如：`https://mysite.com/woody-tv-sources.json`
   - 这是一个**配置文件**的链接，不是视频 API 的链接
   - 只有这种返回 JSON 列表的链接才能在"订阅管理"中添加
 
@@ -309,7 +309,7 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 
 ### 線上體驗
 
-存取 **[https://kvideo.vercel.app/](https://kvideo.vercel.app/)** 立即體驗，無需安裝！
+存取 **[https://woodytv.vercel.app/](https://woodytv.vercel.app/)** 立即體驗，無需安裝！
 
 ### 部署到自己的伺服器
 
@@ -320,7 +320,7 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 1. 點擊上方按鈕
 2. 連接你的 GitHub 帳號
 3. Vercel 會自動檢測 Next.js 專案並部署
-4. 幾分鐘後即可存取你自己的 KVideo 實例
+4. 幾分鐘後即可存取你自己的 Woody TV 實例
 
 #### 選項 2：Cloudflare Pages 部署 (推薦)
 
@@ -330,10 +330,10 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 
 2. **建立專案**：
    - 點擊存取 [**Cloudflare Pages - Connect Git**](https://dash.cloudflare.com/?to=/:account/pages/new/provider/github)。
-   - 如果未連接 GitHub，請點擊 **Connect GitHub**；若已連接，直接選擇你剛才 Fork 的 `KVideo` 專案並點擊 **Begin setup**。
+   - 如果未連接 GitHub，請點擊 **Connect GitHub**；若已連接，直接選擇你剛才 Fork 的 Woody TV 專案並點擊 **Begin setup**。
 
 3. **配置構建參數**：
-   - **Project name**: 預設為 `kvideo` (建議保持不變，後續連結基於此名稱)
+   - **Project name**: 可填 `woody-tv`（下方連結以此為例）
    - **Framework Preset**: 選擇 `Next.js`
    - **Build command**: 輸入 `npm run pages:build`
    - **Build output directory**: 輸入 `.vercel/output/static`
@@ -342,39 +342,25 @@ docker run -d -p 3000:3000 -e NEXT_PUBLIC_SUBSCRIPTION_SOURCES='[{"name":"MySour
 4. **⚠️ 關鍵步驟：修復執行階段環境**
    > *注意：此時部署雖然顯示"Success"，但你會發現存取網頁會報錯。這是因為缺少必要的相容性配置。請按以下步驟修復：*
 
-   - 進入 **[專案設定頁面](https://dash.cloudflare.com/?to=/:account/pages/view/kvideo/settings/production)** (如果你的專案名不是 kvideo，請在控制台手動查找 Settings -> Functions)。
+   - 進入 **[專案設定頁面](https://dash.cloudflare.com/?to=/:account/pages/view/woody-tv/settings/production)** (如果你的專案名不是 woody-tv，請在控制台手動查找 Settings -> Functions)。
    - 拉到頁面底部找到 **Compatibility flags** 部分。
    - 新增標誌：`nodejs_compat`
 
 5. **重試部署 (生效配置)**：
-   - 回到 **[專案概覽頁面](https://dash.cloudflare.com/?to=/:account/pages/view/kvideo)**。
+   - 回到 **[專案概覽頁面](https://dash.cloudflare.com/?to=/:account/pages/view/woody-tv)**。
    - 在 **Deployments** 列表中，找到最新那次部署。
    - 點擊右側的三個點 `...` 選單，選擇 **Retry deployment**。
-   - 等待新的部署完成後，你的 KVideo 就部署成功了！
+   - 等待新的部署完成後，你的 Woody TV 就部署成功了！
 
 #### 選項 3：Docker 部署
-
-**從 Docker Hub 拉取（最簡單）：**
-
-```bash
-# 拉取最新版本
-docker pull kuekhaoyang/kvideo:latest
-docker run -d -p 3000:3000 --name kvideo kuekhaoyang/kvideo:latest
-```
-
-應用將在 `http://localhost:3000` 啟動。
-
-> **✨ 多架構支援**：映像檔支援 2 種主流平台架構：
-> - `linux/amd64` - Intel/AMD 64 位元（大多數伺服器、PC、Intel Mac）
-> - `linux/arm64` - ARM 64 位元（Apple Silicon Mac、AWS Graviton、樹莓派 4/5）
 
 **自己建構映像檔：**
 
 ```bash
-git clone https://github.com/woodywoody40/KVideo.git
-cd KVideo
-docker build -t kvideo .
-docker run -d -p 3000:3000 --name kvideo kvideo
+git clone https://github.com/woodywoody40/KVideo.git woody-tv
+cd woody-tv
+docker build -t woody-tv .
+docker run -d -p 3000:3000 --name woody-tv woody-tv
 ```
 
 **使用 Docker Compose：**
@@ -387,8 +373,8 @@ docker-compose up -d
 
 ```bash
 # 1. 克隆倉庫
-git clone https://github.com/woodywoody40/KVideo.git
-cd KVideo
+git clone https://github.com/woodywoody40/KVideo.git woody-tv
+cd woody-tv
 
 # 2. 安裝依賴
 npm install
@@ -414,27 +400,27 @@ Vercel 會自動檢測 GitHub 倉庫的更新並重新部署，無需手動操�
 
 ```bash
 # 停止并删除旧容器
-docker stop kvideo
-docker rm kvideo
+docker stop woody-tv
+docker rm woody-tv
 
-# 拉取最新镜像
-docker pull kuekhaoyang/kvideo:latest
+# 在專案目錄更新並重新建構映像檔
+git pull --ff-only origin main
+docker build -t woody-tv:latest .
 
 # 运行新容器
-docker run -d -p 3000:3000 --name kvideo kuekhaoyang/kvideo:latest
+docker run -d -p 3000:3000 --name woody-tv woody-tv:latest
 ```
 
 ### Node.js 部署
 
 ```bash
-cd KVideo
+cd woody-tv
 git pull origin main
 npm install
 npm run build
 npm start
 ```
 
-> **🔄 自动化部署**：本项目使用 GitHub Actions 自动构建和发布 Docker 镜像。每次代码推送到 main 分支时，会自动构建多架构镜像并推送到 Docker Hub。
 
 ## 🤝 贡献代码
 
@@ -443,7 +429,7 @@ npm start
 **想要参与开发？请查看 [贡献指南](CONTRIBUTING.md) 了解详细的开发规范和流程。**
 
 快速开始：
-1. **报告 Bug**：[提交 Issue](https://github.com/KuekHaoYang/KVideo/issues)
+1. **报告 Bug**：[提交上游 Issue](https://github.com/KuekHaoYang/KVideo/issues)
 2. **功能建议**：在 Issues 中提出你的想法
 3. **代码贡献**：Fork → Branch → PR
 4. **文档改进**：直接提交 PR
@@ -463,9 +449,9 @@ npm start
 
 ## 📞 联系方式
 
-- **作者**：[KuekHaoYang](https://github.com/KuekHaoYang)
-- **项目主页**：[https://github.com/KuekHaoYang/KVideo](https://github.com/KuekHaoYang/KVideo)
-- **问题反馈**：[GitHub Issues](https://github.com/KuekHaoYang/KVideo/issues)
+- **原作者**：[KuekHaoYang](https://github.com/KuekHaoYang)
+- **Woody TV 專案主頁**：[Woody TV](https://github.com/woodywoody40/KVideo)
+- **问题反馈**：[上游 GitHub Issues](https://github.com/KuekHaoYang/KVideo/issues)
 
 
 
@@ -481,4 +467,4 @@ npm start
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=KuekHaoYang/KVideo&type=date&legend=top-left)](https://www.star-history.com/#KuekHaoYang/KVideo&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=woodywoody40/KVideo&type=date&legend=top-left)](https://www.star-history.com/#woodywoody40/KVideo&type=date&legend=top-left)
